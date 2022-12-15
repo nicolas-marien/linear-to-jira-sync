@@ -1,10 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { Issue } from "@linear/sdk";
 import { Version3Client } from "jira.js";
-import type { NextApiRequest, NextApiResponse } from "next";
-const { JIRA_USER_EMAIL, JIRA_PAT, JIRA_PROJECT_KEY, JIRA_HOST } = process.env;
 import removeMarkdown from "markdown-to-text";
+import type { NextApiRequest, NextApiResponse } from "next";
 import { LinearPayload } from "../../types";
+const { JIRA_USER_EMAIL, JIRA_PAT, JIRA_PROJECT_KEY, JIRA_HOST } = process.env;
 
 const jiraClient = new Version3Client({
   host: JIRA_HOST!,
